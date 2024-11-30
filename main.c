@@ -5,6 +5,7 @@
 
 // declaração das funçoes de utilidade
 void help(void);
+void clear(void);
 void compare(double a, double b);
 
 // Declaração das funções matematicas
@@ -59,6 +60,8 @@ int main() {
             compare(a, b);
         } else if (strcmp(funcao, "help") == 0) {
             help();
+        }else if (strcmp(funcao, "clear") == 0){
+            clear();
         } else {
             printf("Comando desconhecido!\n");
         }
@@ -125,7 +128,11 @@ void help(void){
     printf("funcionalidades utilitarias\n\n");
 
     printf("'compare' a,b compara dois numeros e diz se sao iguais\n");
-
+    printf("'clear' limpa a tela\n");
 
     printf("\n\n");
+}
+
+void clear(void){
+    printf("\033[H\033[J");
 }
